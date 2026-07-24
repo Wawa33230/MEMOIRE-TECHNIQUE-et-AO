@@ -1,0 +1,5 @@
+{
+  "name": "generateur-adom-senior",
+  "private": true,
+  "dependencies": { "docx": "^9" }
+}
