@@ -41,38 +41,35 @@ const note = (text) => new Paragraph({
   children: [new TextRun({ text, font: SANS, size: 14, italics: true, color: C.GRIS })],
 });
 
-// chip de section (petit cartouche orange, texte blanc majuscules)
-const chip = (text, fill = C.OR) => new Table({
-  width: { size: 3600, type: WidthType.DXA },
-  columnWidths: [3600],
-  borders: noBorders(),
-  rows: [new TableRow({
-    children: [new TableCell({
-      width: { size: 3600, type: WidthType.DXA },
-      shading: { type: ShadingType.CLEAR, fill },
-      margins: cellMargins(60, 100),
-      children: [new Paragraph({
-        children: [new TextRun({ text: text.toUpperCase(), font: SANS, size: 16, bold: true, color: C.BLANC })],
-      })],
-    })],
+// chip de section (cartouche orange, texte blanc majuscules) — run ombré pour suivre le flux
+const chip = (text, fill = C.OR) => new Paragraph({
+  keepNext: true,
+  spacing: { before: 240, after: 80 },
+  children: [new TextRun({
+    text: '\u00a0\u00a0' + text.toUpperCase() + '\u00a0\u00a0',
+    font: SANS, size: 16, bold: true, color: C.BLANC,
+    shading: { type: ShadingType.CLEAR, fill },
   })],
 });
 
 // titre principal de section (Arial bold 14pt encre) — style Heading pour la TOC
 const h1 = (text) => new Paragraph({
   heading: HeadingLevel.HEADING_1,
+  keepNext: true,
   spacing: { before: 120, after: 120 },
   children: [new TextRun({ text, font: SANS, size: 30, bold: true, color: C.ENCRE })],
 });
 
 const h2 = (text) => new Paragraph({
   heading: HeadingLevel.HEADING_2,
+  keepNext: true,
   spacing: { before: 200, after: 100 },
   children: [new TextRun({ text, font: SANS, size: 22, bold: true, color: C.TEAL })],
 });
 
 const h3 = (text) => new Paragraph({
   heading: HeadingLevel.HEADING_3,
+  keepNext: true,
   spacing: { before: 160, after: 80 },
   children: [new TextRun({ text, font: SANS, size: 20, bold: true, color: C.ENCRE })],
 });
@@ -115,7 +112,7 @@ const bullet = (text, opts = {}) => new Paragraph({
 const numbered = (text, ref = 'nums') => new Paragraph({
   numbering: { reference: ref, level: 0 },
   alignment: AlignmentType.JUSTIFIED,
-  spacing: { after: 60, line: 252 },
+  spacing: { after: 30, line: 252 },
   children: [new TextRun({ text, font: SANS, size: 19, color: C.TEXTE })],
 });
 

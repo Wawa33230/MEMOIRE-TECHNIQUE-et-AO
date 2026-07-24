@@ -131,7 +131,60 @@ suppression du callout « Notre atout », 48h) :
 - Annexes reproduites en images : dossier VISAP 3 volets, PV de réception,
   notice d'utilisation et d'entretien
 
-## 6. Points de vigilance avant envoi
+## 6. Version 3 — vraies photos, visuel officiel, mise en page continue
+
+- Photos réelles des chantiers ADOM SENIOR intégrées (3 avant/après + 1 exemple
+  de finition bois), en remplacement des photos issues du mémoire ASH
+- Visuel officiel du portail client INTERFAST (extrait du premier mémoire ADOM),
+  en remplacement de la représentation schématique
+- Mise en page continue : suppression des sauts de page systématiques entre
+  sections (titres « keepNext » pour éviter les titres orphelins) — plus de
+  zones blanches en bas de page ; document ramené à 23 pages denses
+
+## 7. Passe complète du MT ASH : ce qui manque encore / pistes d'amélioration
+
+Repris du MT ASH et déjà intégré : trame des sections, charte de bonne conduite,
+sensibilisation au public fragile, processus de contact (24h, relances, avis de
+passage), journée type, autocontrôle d'étanchéité, SS4 (rails, gel, seuils),
+réunions de suivi, garantie 10 ans, continuité de service 365 j, renfort externe,
+GEODIS, déchets, affichage cage d'escalier, arrêté stationnement, acoustique.
+
+**Manque encore — à fort impact :**
+1. **Cas pratique détaillé** (section 10 ASH) : une étude de chantier complète
+   avec durées par poste (démolition 7h, lavabo 2h, sol 2h) et spécifications
+   chiffrées (receveur antiglisse PN24, ressaut ≤ 2 cm, paroi fixe 700 mm +
+   rabat 400 mm, barres 60 cm, siège 190-250 kg, sol R10, loi du 11/02/2005).
+   → à refaire avec un vrai chantier Morbihan Habitat 2025.
+2. **Tableau nominatif des qualifications** : ASH listait chaque intervenant
+   avec ses formations (SS4, habilitation électrique, SST) + fiches de poste
+   + organigramme. Nous n'avons que 3 noms.
+3. **Spécifications produits chiffrées** dans la section technique (épaisseurs
+   63/23/18 mm, coloris, dimensions receveurs, classements) — notre section
+   LT Showertec est plus qualitative que chiffrée.
+4. **Coordonnées de la cellule SAV** : ASH donnait fixe, portable et e-mail.
+   Notre notice mentionne sav@adomsenior.fr — à faire remonter dans la
+   section 8 avec un téléphone.
+5. **Logigramme SS3/SS4** (« comment distinguer avant intervention ») — utile
+   en annexe pour crédibiliser la partie amiante.
+
+**Manque — impact moyen :**
+6. Communication locataire : la règle ASH « prise de RDV 15 jours à l'avance »
+   et « signalement sous 24h si la date ne correspond pas au BT ».
+7. Stock chiffré : ASH annonçait un an de stock d'avance ; nous disons
+   « stock dédié » sans le quantifier.
+8. Références bailleurs enrichies : durée de collaboration et volumes par
+   bailleur breton (ASH donnait les contacts nominatifs par agence).
+9. Alertes e-mail automatiques par phase de chantier (ASH PLANNER le faisait —
+   à vérifier si INTERFAST le permet avant de l'écrire).
+10. Déchets : nommer les centres agréés / déchetteries pro du Morbihan et
+    ajouter un indicateur de taux de valorisation.
+
+**À ne PAS reprendre** (propre à ASH, non justifiable par ADOM SENIOR) :
+labels HS2/Silverbat, 200 poses/mois, 100 bailleurs nationaux, plateformes
+Bègles/Limoges, Infomaniak/Ubiwan/Hansgrohe-taxonomie, chiffres d'insertion
+(Remuménage, CAIO, parité 50 %) — sauf si ADOM SENIOR a ses propres faits.
+
+## 8. Points de vigilance avant envoi
 
 - **Sommaire** : les numéros de page du sommaire sont statiques (vérifiés sur la
   version générée). Si vous ajoutez du contenu dans Word, mettez-les à jour.

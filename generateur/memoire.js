@@ -9,7 +9,6 @@ const K = require('./charte');
 const { C, SANS, SERIF } = K;
 const IMGDIR = __dirname + '/assets/';
 
-
 const D = []; // corps du document
 
 // =====================================================================
@@ -61,17 +60,17 @@ D.push(
   K.spacer(120),
   tocLine('1. Présentation d’ADOM SENIOR', '3'),
   tocLine('2. Notre compréhension de votre marché', '6'),
-  tocLine('3. Moyens humains', '7'),
-  tocLine('4. Méthodologie d’exécution des travaux', '9'),
-  tocLine('5. Moyens techniques et matériels', '12'),
-  tocLine('6. Suivi des chantiers : le portail INTERFAST', '14'),
-  tocLine('7. Chronologie et délais de traitement', '16'),
-  tocLine('8. Qualité, garanties et service après-vente', '18'),
-  tocLine('9. Sécurité, prévention et maîtrise du risque amiante', '19'),
-  tocLine('10. Gestion des déchets et valorisation', '20'),
-  tocLine('11. Notre démarche responsable', '21'),
-  tocLine('12. Références, sources et annexes', '22'),
-  tocLine('Annexes reproduites — VISAP, PV de réception, notice d’entretien', '23'),
+  tocLine('3. Moyens humains', '6'),
+  tocLine('4. Méthodologie d’exécution des travaux', '8'),
+  tocLine('5. Moyens techniques et matériels', '10'),
+  tocLine('6. Suivi des chantiers : le portail INTERFAST', '12'),
+  tocLine('7. Chronologie et délais de traitement', '14'),
+  tocLine('8. Qualité, garanties et service après-vente', '16'),
+  tocLine('9. Sécurité, prévention et maîtrise du risque amiante', '16'),
+  tocLine('10. Gestion des déchets et valorisation', '17'),
+  tocLine('11. Notre démarche responsable', '18'),
+  tocLine('12. Références, sources et annexes', '19'),
+  tocLine('Annexes reproduites — VISAP, PV de réception, notice d’entretien', '20'),
   new Paragraph({ children: [new PageBreak()] }),
 );
 
@@ -125,19 +124,20 @@ D.push(
     ['Espacil Habitat', 'Bretagne et Grand Ouest'],
   ], [3400, 5960], { boldFirstCol: true }),
   K.spacer(120),
-  K.h2('Nos réalisations : la preuve par l’image'),
-  ...K.img(IMGDIR + 'g_avant_apres.png', 660),
-  K.rich([
-    { text: 'Retrouvez l’ensemble de nos réalisations avant / après, nos solutions et nos actualités sur ' },
-    { text: 'adomsenior.fr', bold: true, color: C.TEAL },
-    { text: '.' },
-  ]),
   K.h2('Nos valeurs'),
   K.bullet('Le respect du locataire : intervenir chez une personne âgée ou fragile exige écoute, douceur et rigueur ;'),
   K.bullet('La qualité d’exécution : des finitions soignées, contrôlées et documentées à chaque étape ;'),
   K.bullet('La transparence : un suivi partagé avec le bailleur, des preuves photographiques et des documents structurés ;'),
   K.bullet('La proximité : une entreprise bretonne, au service des bailleurs bretons.'),
-  new Paragraph({ children: [new PageBreak()] }),
+  K.h2('Nos réalisations : la preuve par l’image'),
+  ...K.img(IMGDIR + 'g_realisation_1.png', 470),
+  ...K.img(IMGDIR + 'g_realisation_2.png', 620),
+  K.rich([
+    { text: 'Retrouvez l’ensemble de nos réalisations avant / après, nos solutions et nos actualités sur ' },
+    { text: 'adomsenior.fr', bold: true, color: C.TEAL },
+    { text: '.' },
+  ]),
+  K.spacer(120),
 );
 
 // =====================================================================
@@ -164,7 +164,7 @@ D.push(
   K.bullet('Maintenir la coordination entre les agences, le Pôle Travaux, les locataires et l’entreprise ;'),
   K.bullet('Disposer d’une traçabilité complète : visite, devis, validation, pose, réception, SAV ;'),
   K.bullet('Couvrir de façon homogène les secteurs Est et Ouest du département, sur 215 communes.'),
-  new Paragraph({ children: [new PageBreak()] }),
+  K.spacer(120),
 );
 
 // =====================================================================
@@ -220,7 +220,7 @@ D.push(
   K.bullet('Habilitations électriques adaptées aux interventions ;'),
   K.bullet('Formation aux gestes de premiers secours (SST) ;'),
   K.bullet('Formation continue aux produits et systèmes posés (LT Showertec, robinetterie, parois).'),
-  new Paragraph({ children: [new PageBreak()] }),
+  K.spacer(120),
 );
 
 // =====================================================================
@@ -258,7 +258,7 @@ D.push(
   K.bullet('Accessibilité : vérification du stationnement, demande d’arrêté temporaire à la commune si nécessaire.'),
   K.spacer(60),
   K.h2('L’intervention type : une douche posée en une journée'),
-  K.body('Interventions réalisées entre 8 h et 18 h maximum, en tenant compte des demandes des locataires. Affichage préalable en cage d’escalier pour prévenir le voisinage des nuisances éventuelles et coupures d’eau nécessaires, en lien avec le gardien du site.'),
+  K.body('Interventions réalisées entre 8h et 18h, en tenant compte des demandes des locataires ; affichage préalable en cage d’escalier, en lien avec le gardien du site.'),
   K.h3('Matin'),
   K.numbered('Présentation de l’équipe au gardien puis au locataire ; explication du déroulement de la journée ;', 'num_matin'),
   K.numbered('Débarrassage des éléments de la salle de bains (aide au locataire pour ce qu’il ne peut pas faire seul) ;', 'num_matin'),
@@ -276,7 +276,7 @@ D.push(
   K.numbered('Explication du fonctionnement de la douche au locataire ;', 'nums2'),
   K.numbered('Signature du PV de réception et remise de la notice d’utilisation et d’entretien.', 'nums2'),
   K.spacer(60),
-  K.callout('TRAVAUX ANNEXES', 'Selon les besoins : WC, lavabo / miroir / réglette lumineuse, meuble, sol, dépose / pose de bidet, porte à glissement ou changement de sens de porte, rabotage de porte. Ces travaux peuvent porter l’intervention à 1 journée ½, voire 48h. Le binôme de poseurs est alors constitué selon les qualifications requises (maçonnerie, peinture, électricité, menuiserie).'),
+  K.callout('TRAVAUX ANNEXES', 'Selon les besoins : WC, lavabo / miroir / réglette lumineuse, meuble, sol, dépose / pose de bidet, porte à glissement ou changement de sens de porte, rabotage de porte. Ces travaux peuvent porter l’intervention à 1 journée ½, voire 48h ; le binôme de poseurs est constitué selon les qualifications requises.'),
   K.spacer(120),
   K.h2('L’autocontrôle d’étanchéité'),
   K.body('ADOM SENIOR applique un procédé rigoureux d’autocontrôle pour garantir l’étanchéité des raccordements, conformément aux normes en vigueur (NF DTU 60.1) :'),
@@ -289,9 +289,8 @@ D.push(
   K.bullet('Signature du PV de réception contradictoire avec le locataire présent ou le personnel de proximité, attestant de la bonne réalisation des travaux ;'),
   K.bullet('Check-list de contrôle remplie par nos techniciens pour garantir un chantier sans réserve ;'),
   K.bullet('Remise de la notice d’utilisation et d’entretien au locataire ;'),
-  K.bullet('Appel de contrôle de satisfaction quelques jours après la pose ;'),
-  K.bullet('Transmission au bailleur de l’ensemble des éléments (PV, photos, documents) au plus tard avec la facture.'),
-  new Paragraph({ children: [new PageBreak()] }),
+  K.bullet('Appel de contrôle de satisfaction quelques jours après la pose, puis transmission au bailleur de l’ensemble des éléments (PV, photos, documents) au plus tard avec la facture.'),
+  K.spacer(120),
 );
 
 // =====================================================================
@@ -317,9 +316,10 @@ D.push(
   K.bullet('Esthétique non stigmatisante, cohérente avec une adaptation destinée au maintien à domicile ;'),
   K.bullet('Compatibilité avec les interventions en SS4 (pose par rails sans percement direct des supports amiantés — voir section 9) ;'),
   K.bullet('Traçabilité de la gamme, de la teinte et des accessoires dans le dossier logement.'),
+  ...K.img(IMGDIR + 'finition_bois.png', 290, 'Exemple de finition — panneaux muraux effet bois, receveur extra-plat et colonne de douche (chantier ADOM SENIOR).'),
   K.note('Garantie, classement feu, épaisseur et composition : valeurs de la fiche fabricant en vigueur correspondant à la référence effectivement commandée.'),
   K.h2('Approvisionnement : le réseau CEDEO du Morbihan'),
-  K.body('Notre approvisionnement s’appuie sur le maillage CEDEO du Morbihan : Lorient, Lanester, Auray, Theix–Vannes, Vannes Ouest, Ploërmel et Saint-Thuriau. Ce réseau de proximité sécurise la couverture de l’ensemble du territoire, le réassort et la gestion locale du SAV.'),
+  K.body('Notre approvisionnement s’appuie sur le maillage CEDEO du Morbihan : Lorient, Lanester, Auray, Theix–Vannes, Vannes Ouest, Ploërmel et Saint-Thuriau.'),
   K.table(['Avantage', 'Effet concret'], [
     ['Disponibilité', 'Réduction du risque de report de chantier pour une fourniture courante.'],
     ['Réassort', 'Solution de proximité en cas d’écart constaté à la pose.'],
@@ -328,8 +328,8 @@ D.push(
   ], [2600, 6760], { boldFirstCol: true }),
   K.spacer(120),
   K.h2('Logistique nationale : notre partenariat GEODIS'),
-  K.body('Pour les équipements principaux (panneaux, receveurs, parois), notre chaîne logistique s’appuie sur GEODIS : les matériaux commandés dès réception du bon de commande sont livrés en environ 5 jours ouvrés, au plus près du lieu d’intervention, où nos poseurs les réceptionnent et les contrôlent. Ce circuit court entre le stock, le transporteur et le chantier est l’un des piliers de notre engagement de délai de 4 semaines.'),
-  ...K.img(IMGDIR + 'g_logistique.png', 660),
+  K.body('Pour les équipements principaux (panneaux, receveurs, parois), notre chaîne logistique s’appuie sur GEODIS : les matériaux commandés dès réception du bon de commande sont livrés en environ 5 jours ouvrés, au plus près du lieu d’intervention, où nos poseurs les réceptionnent et les contrôlent. Ce circuit court est l’un des piliers de notre engagement de délai de 4 semaines.'),
+  ...K.img(IMGDIR + 'g_logistique.png', 590),
   K.spacer(60),
   K.h2('Véhicules et outillage'),
   K.table(['Moyen', 'Mise à disposition'], [
@@ -340,8 +340,8 @@ D.push(
     ['Numérique', 'INTERFAST, téléphones chantier, photos géolocalisées et documents standardisés.'],
   ], [2600, 6760], { boldFirstCol: true }),
   K.spacer(80),
-  K.body('L’ensemble des outils et du matériel fait l’objet d’une surveillance permanente et d’un programme d’entretien régulier, garantissant leur bon fonctionnement et leur conformité aux normes de sécurité. Nos véhicules sont floqués aux couleurs d’ADOM SENIOR, assurant une identification claire de nos équipes par les locataires et les gardiens.'),
-  new Paragraph({ children: [new PageBreak()] }),
+  K.body('L’ensemble des outils et du matériel est surveillé et entretenu régulièrement, en conformité avec les normes de sécurité. Nos véhicules sont floqués aux couleurs d’ADOM SENIOR, pour une identification claire par les locataires et les gardiens.'),
+  K.spacer(120),
 );
 
 // =====================================================================
@@ -353,7 +353,7 @@ D.push(
   K.h1('6. Suivi des chantiers : le portail INTERFAST'),
   K.h2('Le bailleur suit ses chantiers sans relancer l’entreprise'),
   K.body('ADOM SENIOR propose d’ouvrir à Morbihan Habitat un accès nominatif à son portail client INTERFAST. Pour chaque chantier partagé, le référent du bailleur retrouve 24h/24, sur ordinateur et mobile, les informations générales, les interventions terminées, les rapports et photographies ainsi que les documents sélectionnés.'),
-  ...K.img(IMGDIR + 'g_interfast.png', 640),
+  ...K.img(IMGDIR + 'interfast_officiel.png', 480, 'Portail client INTERFAST — consultation sur ordinateur et mobile. Visuel officiel INTERFAST.'),
   K.spacer(40),
   K.table(['Information suivie', 'Utilité pour le bailleur'], [
     ['Vue d’ensemble', 'État d’avancement général des chantiers partagés et interventions associées.'],
@@ -390,7 +390,7 @@ D.push(
     ['Bilan annuel', 'Évaluation de la qualité des prestations, identification des améliorations, anticipation des besoins futurs et état des lieux du contrat. Un compte-rendu écrit est remis par ADOM SENIOR.'],
     ['À la demande', 'Charles de Lestrange se rend disponible sur convocation du bailleur, sous 48h en cas de situation urgente.'],
   ], [2800, 6560], { boldFirstCol: true }),
-  new Paragraph({ children: [new PageBreak()] }),
+  K.spacer(120),
 );
 
 // =====================================================================
@@ -415,7 +415,7 @@ D.push(
   ...K.img(IMGDIR + 'g_delais.png', 600),
   K.body('La planification regroupe géographiquement les poses pour optimiser les tournées, sans jamais retarder les situations prioritaires signalées par le Pôle Social.'),
   K.note('Délais exprimés comme engagements opérationnels proposés, sous réserve des stipulations contractuelles, diagnostics, accès et validations du bailleur.'),
-  new Paragraph({ children: [new PageBreak()] }),
+  K.spacer(120),
 );
 
 // =====================================================================
@@ -453,7 +453,7 @@ D.push(
   K.numbered('Intervention planifiée avec le locataire par un poseur qualifié ;', 'num_sav'),
   K.numbered('Clôture documentée : action réalisée, délai et preuve enregistrés, visibles par le bailleur.', 'num_sav'),
   K.callout('PROXIMITÉ SAV', 'Nos équipes étant basées en Bretagne, une intervention SAV ne dépend jamais de la disponibilité d’une équipe nationale de passage : le réassort s’appuie sur les agences CEDEO du Morbihan et le déplacement se fait en heures, pas en semaines.'),
-  new Paragraph({ children: [new PageBreak()] }),
+  K.spacer(120),
 );
 
 // =====================================================================
@@ -481,7 +481,7 @@ D.push(
   ], [2600, 6760], { boldFirstCol: true }),
   K.spacer(80),
   K.callout('LIMITER LES PERCEMENTS', 'Les solutions LT Showertec et leurs profilés peuvent, selon la configuration et les prescriptions du mode opératoire, contribuer à réduire les travaux sur le support existant. Elles ne remplacent jamais le repérage ni l’analyse de risque.'),
-  new Paragraph({ children: [new PageBreak()] }),
+  K.spacer(120),
 );
 
 // =====================================================================
@@ -506,7 +506,7 @@ D.push(
   K.bullet('Dépôt en déchetteries professionnelles et centres agréés du Morbihan — bordereaux de suivi conservés dans le dossier chantier ;'),
   K.bullet('Réduction des volumes à la source : la méthode d’habillage LT Showertec limite les déposes lourdes et les gravats par rapport à une réfection complète en faïence ;'),
   K.bullet('Sensibilisation continue des équipes au geste de tri et à la traçabilité.'),
-  new Paragraph({ children: [new PageBreak()] }),
+  K.spacer(120),
 );
 
 // =====================================================================

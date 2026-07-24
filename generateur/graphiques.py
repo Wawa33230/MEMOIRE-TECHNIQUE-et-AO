@@ -215,14 +215,50 @@ def g_interfast():
     im.save('assets/g_interfast.png')
 
 # =====================================================================
-# 5. AVANT / APRÈS — réalisations
+# 5. RÉALISATIONS — vraies photos client
 # =====================================================================
-def g_avant_apres():
-    M = 'assets/'
-    pairs = [(M + 'chantier_avant_1.jpg', M + 'chantier_apres_1.jpg'), (M + 'chantier_avant_2.jpg', M + 'chantier_apres_2.jpg')]
+def _photo(im_path, PW, PH):
+    ph = Image.open(im_path).convert('RGB')
+    ph = ImageOps.fit(ph, (PW, PH), method=Image.LANCZOS, centering=(0.5, 0.5))
+    mask = Image.new('L', (PW, PH), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, PW, PH), radius=24, fill=255)
+    return ph, mask
+
+def _badge(d, x, y, label, col):
+    rr(d, (x, y, x + 150, y + 48), 24, fill=col)
+    center_text(d, x + 75, y + 24, label, F(FSB, 27), BLANC)
+
+def g_realisation_1():
+    # chantier 1 : rénovation complète — 2 colonnes (vasques, baignoire→douche) × 2 lignes (avant, après)
+    PW, PH = 600, 640
+    W, H = 70 + PW + 30 + PW + 70, 190 + 2 * (PH + 30) + 70
+    im = Image.new('RGB', (W, H), BLANC)
+    d = ImageDraw.Draw(im)
+    rr(d, (8, 8, W - 8, H - 8), 28, fill=CREME)
+    d.ellipse((W - 140, -60, W + 40, 120), fill=PALE)
+    d.ellipse((W - 90, 50, W - 40, 100), fill=OR)
+    d.text((60, 44), 'NOS RÉALISATIONS', font=F(FSB, 30), fill=OR)
+    d.text((60, 88), 'Une rénovation complète par nos équipes', font=F(FGB, 48), fill=ENCRE)
+    cells = [
+        ('assets/p1_avant_vasques.png', 'AVANT', ENCRE, 0, 0), ('assets/p1_avant_baignoire.png', 'AVANT', ENCRE, 1, 0),
+        ('assets/p1_apres_vasques.png', 'APRÈS', OR, 0, 1), ('assets/p1_apres_douche.png', 'APRÈS', OR, 1, 1),
+    ]
+    for path, label, col, cx, cy in cells:
+        x = 70 + cx * (PW + 30)
+        y = 190 + cy * (PH + 30)
+        ph, mask = _photo(path, PW, PH)
+        im.paste(ph, (x, y), mask)
+        _badge(d, x + 18, y + 18, label, col)
+    center_text(d, W / 2, H - 40,
+                'Meuble double vasque et baignoire remplacés — douche sécurisée, meuble PMR et miroir lumineux.',
+                F(FS, 28), TEXTE)
+    im.save('assets/g_realisation_1.png')
+
+def g_realisation_2():
+    # chantiers 2 et 3 : deux paires avant → après
     PW, PH = 560, 640
-    W, H = 90 + 2 * (2 * PW + 150) + 60, PH + 260
-    W = 90 + (2 * PW + 130) * 2 + 90 - 40
+    W = 70 + (2 * PW + 24) * 2 + 82 + 70
+    H = 190 + PH + 110
     im = Image.new('RGB', (W, H), BLANC)
     d = ImageDraw.Draw(im)
     rr(d, (8, 8, W - 8, H - 8), 28, fill=CREME)
@@ -232,25 +268,17 @@ def g_avant_apres():
     d.text((60, 88), 'La baignoire remplacée par une douche sécurisée — en 1 journée', font=F(FGB, 48), fill=ENCRE)
     y0 = 190
     x = 70
-    for avant, apres in pairs:
+    for avant, apres in [('assets/p2_avant.png', 'assets/p2_apres.png'), ('assets/p3_avant.png', 'assets/p3_apres.png')]:
         for path, label, col in [(avant, 'AVANT', ENCRE), (apres, 'APRÈS', OR)]:
-            ph = Image.open(path).convert('RGB')
-            ph = ImageOps.fit(ph, (PW, PH), method=Image.LANCZOS, centering=(0.5, 0.45))
-            # coins arrondis
-            mask = Image.new('L', (PW, PH), 0)
-            ImageDraw.Draw(mask).rounded_rectangle((0, 0, PW, PH), radius=24, fill=255)
+            ph, mask = _photo(path, PW, PH)
             im.paste(ph, (x, y0), mask)
-            rr(d, (x + 18, y0 + 18, x + 18 + 150, y0 + 66), 24, fill=col)
-            center_text(d, x + 18 + 75, y0 + 42, label, F(FSB, 27), BLANC)
+            _badge(d, x + 18, y0 + 18, label, col)
             x += PW + 24
-            if label == 'AVANT':
-                # flèche entre les deux photos
-                pass
         x += 82
-    center_text(d, W/2, y0 + PH + 46,
+    center_text(d, W / 2, y0 + PH + 52,
                 'Photos de chantiers réalisés par nos équipes. Toutes nos réalisations sur adomsenior.fr',
                 F(FS, 28), TEXTE)
-    im.save('assets/g_avant_apres.png')
+    im.save('assets/g_realisation_2.png')
 
-g_ca(); g_delais(); g_logistique(); g_interfast(); g_avant_apres()
+g_ca(); g_delais(); g_logistique(); g_realisation_1(); g_realisation_2()
 print('graphiques OK')
