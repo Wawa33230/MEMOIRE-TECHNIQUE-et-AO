@@ -281,8 +281,54 @@ const pageMargins = {
 
 const spacer = (after = 160) => new Paragraph({ spacing: { after }, children: [] });
 
+// ---------- images ----------
+const fs = require('fs');
+const { ImageRun } = require('docx');
+
+// lecture des dimensions PNG (IHDR) / JPEG (SOF)
+function imgDims(path) {
+  const b = fs.readFileSync(path);
+  if (b[0] === 0x89 && b[1] === 0x50) {          // PNG
+    return { w: b.readUInt32BE(16), h: b.readUInt32BE(20), type: 'png' };
+  }
+  if (b[0] === 0xff && b[1] === 0xd8) {          // JPEG
+    let i = 2;
+    while (i < b.length) {
+      if (b[i] !== 0xff) { i++; continue; }
+      const m = b[i + 1];
+      if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) {
+        return { h: b.readUInt16BE(i + 5), w: b.readUInt16BE(i + 7), type: 'jpg' };
+      }
+      i += 2 + b.readUInt16BE(i + 2);
+    }
+  }
+  throw new Error('format image inconnu : ' + path);
+}
+
+// image centrée à largeur imposée (px à 96 dpi), légende optionnelle
+function img(path, widthPx, caption) {
+  const { w, h, type } = imgDims(path);
+  const heightPx = Math.round(widthPx * h / w);
+  const out = [new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { before: 80, after: caption ? 40 : 120 },
+    children: [new ImageRun({
+      data: fs.readFileSync(path), type,
+      transformation: { width: widthPx, height: heightPx },
+    })],
+  })];
+  if (caption) {
+    out.push(new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { after: 140 },
+      children: [new TextRun({ text: caption, font: SANS, size: 14, italics: true, color: C.GRIS })],
+    }));
+  }
+  return out;
+}
+
 module.exports = {
   C, SANS, SERIF, body, rich, note, chip, h1, h2, h3, callout, bullet, numbered,
   table, kpiStrip, logoRuns, pageHeader, pageFooter, numberingConfig, pageMargins,
-  spacer, noBorders, thinBorders, cellMargins,
+  spacer, noBorders, thinBorders, cellMargins, img, imgDims,
 };

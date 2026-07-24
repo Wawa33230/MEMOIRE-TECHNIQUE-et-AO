@@ -98,7 +98,40 @@ node proposition.js ../documents/PROPOSITION_REPRISE_MARCHE_ASH_MORBIHAN_HABITAT
 Les `.docx` restent bien sûr éditables directement dans Word — les scripts ne sont
 utiles que pour regénérer une version propre après modification de fond.
 
-## 5. Points de vigilance avant envoi
+## 5. Version 2 du mémoire technique (26 pages)
+
+Évolutions intégrées à la demande de Loyk, ainsi que ses modifications
+manuscrites (conducteur de travaux 5 ans d'expérience, encadrant technique SS4,
+suppression du callout « Notre atout », 48h) :
+
+**Contenu**
+- Références bailleurs bretons : Archipel Habitat, Brest Métropole Habitat,
+  Aiguillon Construction, Espacil Habitat (+ Morbihan Habitat)
+- Labels : HANDIBAT (labélisés), QUALIBAT en cours d'obtention
+- Habitude de travail avec les ergothérapeutes (section 3 + VISAP)
+- Gouvernance du marché : réunion de lancement, points trimestriels, bilan
+  annuel avec compte-rendu (repris de l'organisation ASH)
+- Garantie produit 10 ans (conformité, matériaux, fabricant, performance)
+- **Engagement fort : 4 semaines entre réception du bon de commande et travaux**
+- Logistique GEODIS : livraison ≈ 5 jours ouvrés (remplace les « 10 jours »)
+- SS4 : 6 modes opératoires couvrant l'ensemble des prestations, validés au
+  besoin par mesures d'empoussièrement, référencés au DUERP (extrait sur demande)
+- RSE / déchets : tri systématique, revalorisation chaque fois que possible
+
+**Visuels** (langage graphique du triptyque VISAP : crème, teal, orange, formes arrondies)
+- Logo officiel Adomsenior et photo produit extraits du triptyque VISAP (couverture)
+- Graphique en barres du CA 2023-2025 avec part Morbihan Habitat
+- Chronologie verticale « Délais de traitement » (modèle page 26 du MT ASH)
+- Schéma de la chaîne logistique GEODIS + CEDEO
+- Représentation schématique de l'espace client INTERFAST (libellée comme telle —
+  le site adomsenior.fr et le portail réel étant inaccessibles depuis cet
+  environnement, remplacer par de vraies captures d'écran si souhaité)
+- Montage photos avant/après de chantiers réels (issus du mémoire ASH) + renvoi
+  vers adomsenior.fr
+- Annexes reproduites en images : dossier VISAP 3 volets, PV de réception,
+  notice d'utilisation et d'entretien
+
+## 6. Points de vigilance avant envoi
 
 - **Sommaire** : les numéros de page du sommaire sont statiques (vérifiés sur la
   version générée). Si vous ajoutez du contenu dans Word, mettez-les à jour.
