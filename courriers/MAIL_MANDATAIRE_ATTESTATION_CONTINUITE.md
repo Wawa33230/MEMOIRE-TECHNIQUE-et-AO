@@ -46,9 +46,11 @@ intervenait.
 Je tiens à préciser que **notre démarche ne porte pas sur l'ensemble des marchés d'ASH**.
 Nous ciblons en priorité le **secteur Bretagne**, sur lequel intervenait notre agent
 commercial, M. Charles de Lestrange, précédemment agent commercial d'ASH sur cette même
-région. C'est sur ce périmètre que notre connaissance des bailleurs, du patrimoine et
-des attentes est la plus directe, et que nous sommes en mesure d'assurer la continuité
-du service sans aucune rupture pour les locataires.
+région. M. de Lestrange est lié à ADOM SENIOR par un contrat d'agent commercial ayant
+pris effet le 31 juillet 2026, soit postérieurement au jugement de liquidation. C'est
+sur ce périmètre que notre connaissance des bailleurs, du patrimoine et des attentes est
+la plus directe, et que nous sommes en mesure d'assurer la continuité du service sans
+aucune rupture pour les locataires.
 
 **Nos moyens et nos engagements**
 
@@ -87,8 +89,9 @@ les éléments suivants, dont vous disposez dans votre dossier :
    d'ASH et figure au passif de la procédure pour un montant d'environ 150 000 € au
    titre de prestations réalisées ;
 3. que M. Charles de Lestrange était agent commercial d'ASH sur le secteur Bretagne et
-   exerce aujourd'hui les mêmes fonctions au sein d'ADOM SENIOR, et que M. Loyk Duporge
-   était salarié d'ASH et a vocation à rejoindre les effectifs d'ADOM SENIOR ;
+   exerce aujourd'hui les mêmes fonctions au sein d'ADOM SENIOR, dans le cadre d'un
+   contrat d'agent commercial ayant pris effet le 31 juillet 2026, et que M. Loyk
+   Duporge était salarié d'ASH et a vocation à rejoindre les effectifs d'ADOM SENIOR ;
 4. que vous ne voyez pas d'objection à ce qu'ADOM SENIOR se rapproche directement des
    bailleurs bretons concernés afin d'assurer la continuité des prestations
    d'adaptation, dès lors qu'aucune reprise de contrat ni cession d'actif n'est
